@@ -15,10 +15,11 @@ def index():
                                                 
     if form.validate_on_submit():
         keys = form.keys.data.replace(' ', '').split(',')
-        arr = get_similar(form.question.data, keys)
-
-        pdfs = [[os.path.relpath(arr[i][0][0], os.path.abspath(os.path.dirname(__file__))), arr[i][0][1]+1] for i in range(5)]
-
+        arr, length = get_similar(form.question.data, keys)
+        if length >= 5:
+            pdfs = [[os.path.relpath(arr[i][0][0], os.path.abspath(os.path.dirname(__file__))), arr[i][0][1]+1] for i in range(5)]
+        else:
+            pdfs = [[os.path.relpath(arr[i][0][0], os.path.abspath(os.path.dirname(__file__))), arr[i][0][1]+1] for i in range(length)]
         return render_template('index.html', form=form, pdfs=pdfs)
     
     return render_template('index.html', form=form)

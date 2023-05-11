@@ -45,8 +45,9 @@ def get_similar(user_input, keys):
         chunks = get_chunks(key_dir)
         sim_scores.extend(chunks_similarity(user_input, chunks))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    length = len(sim_scores)
                                                                               
-    return sim_scores                                                                              
+    return sim_scores, length                                                                              
                                                                               
                                                                                                                                                             
                                                                                                                                                                                                                                           
