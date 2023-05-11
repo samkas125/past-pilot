@@ -161,6 +161,27 @@ td form{
     padding-right: 70px;
 }
 
+.navbar-custom {
+    background-color: #35383a; 
+}
 
+@media only screen and (min-width: 992px) {
+    #hamburger_menu {
+        display: none;
+    }
 
+    #bar{
+        display: flex;
+    }
+}
 
+@media only screen and (max-width: 992px) {
+    #hamburger_menu {
+        display: flex;
+      }
+
+    #bar{
+        display: none;
+    }
+
+}

@@ -5,23 +5,54 @@ body{
     background-image: url('imgs/bg2.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size:cover;
+    overflow: hidden;
+}
+
+.bg {
+    position: relative;
+    height: 100vh;
 }
 
 .welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 17%;
 }
 
 .welcome-text h1{
     font-family: "Archivo Black";
     color: #898d96;
-    font-size: 80px;
+    font-size: 4em;
 }
 
 .welcome-text p{
     color: #414347;
-    font-size: 24px;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .welcome-text h1 {
+      font-size: 3.5em;
+    }
+    
+    .welcome-text p {
+      font-size: 1.25em;
+    }
+}
+  
+@media screen and (max-width: 520px) {  
+    .welcome-text h1 {
+        font-size: 2.75em;
+    }
+
+    .welcome-text p {
+        font-size: 1em;
+    }
 }
