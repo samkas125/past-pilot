@@ -3,7 +3,7 @@
 ![past-pilot-art](https://user-images.githubusercontent.com/91330011/233276618-ae4b0d09-c0ca-4e14-9d7c-0c9e317ca782.png)
 
 ## Introduction  
-An Ed-tech platform for managing academic resources like past papers, with private key-based storage and NLP integration for easy search for similar or specific questions. Made in collaboration with [Samatva Kasat](https://github.com/samkas125).
+An Ed-tech platform for managing academic resources like past papers, with private key-based storage and NLP integration for easy search for similar or specific questions. Made in collaboration with [Yash Goyal](https://github.com/ycatsh).
   
 
 ## Functionality  
