@@ -22,8 +22,8 @@ def get_chunks(directory):
                                                                               
                                                                               
 def calculate_similarity(user_input, data):
-    embeddings = model.encode([data], convert_to_tensor=True)
-    sim = util.cos_sim(embeddings[0], user_input).item()
+    embeddings = model.encode([user_input, data], convert_to_tensor=True)
+    sim = util.cos_sim(embeddings[0], embeddings[1]).item()
 
     return sim
                                                                               
@@ -38,7 +38,6 @@ def chunks_similarity(user_input, chunks):
                                                                               
                                                                               
 def get_similar(user_input, keys):
-    user_input = model.encode([user_input], convert_to_tensor=True)[0]
     directory = get_data_dir()
     sim_scores = []
     for key in keys:

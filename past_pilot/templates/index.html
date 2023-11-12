@@ -38,27 +38,30 @@
             </fieldset>
 
             <div class="form-group">
-                {{ form.submit(class="btn btn-primary btn-sm") }}
+                {{ form.submit(class="btn btn-primary btn-sm", id="q-b") }}
             </div>
         </form>
+        
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
     </div>
-
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>PDF Path</th>
-                    <th>Page Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pdf in pdfs %}
-                <tr>
-                    <td><a href="{{ pdf[0] }}#page={{ pdf[1] }}">{{ pdf[0] }}</a></td>
-                    <td>{{ pdf[1] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>PDF Path</th>
+                <th>Page Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pdf in pdfs %}
+            <tr>
+                <td><a href="{{ pdf[0] }}#page={{ pdf[1] }}">{{ pdf[0] }}</a></td>
+                <td>{{ pdf[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="../static/scripts/loader.js"></script>
+    
 {% endblock content %}
