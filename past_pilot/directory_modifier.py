@@ -6,9 +6,8 @@ def get_data_dir():
 
 def auth_make_dir(user, key):
     if user.is_authenticated:
-        user_data_dir = f'{get_data_dir()}/{key}'
+        user_data_dir = os.path.join(get_data_dir(), key)
         os.mkdir(user_data_dir)
-
     return 'Successful'
 
 
@@ -20,7 +19,7 @@ def fetch_dir(keys):
 
         if len(dirs) == len(keys):
             break
-    
+
     return dirs
 
 
@@ -34,7 +33,7 @@ def dir_searcher(dirs, arg):
             urls.append(f'data/users/{directory}/{file_name}')
 
     if arg == 0:
-        return names 
+        return names
     elif arg == 1:
         return urls
 
@@ -42,7 +41,7 @@ def dir_searcher(dirs, arg):
 def own_dir_searcher(user, arg):
     owned_names = []
     owned_urls = []
-    
+
     for file_name in os.listdir(f'{get_data_dir()}/{user.key}'):
         owned_names.append(file_name)
         owned_urls.append(f'data/users/{user.key}/{file_name}')
