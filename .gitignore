@@ -5,9 +5,9 @@
 .env
 
 ### user ###
-data/
-data/user
-data/user/images
+# data/
+data/user/*
+# data/user/images
 
 ### Flask ###
 instance/*
